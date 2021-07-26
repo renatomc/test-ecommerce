@@ -6,11 +6,12 @@ export const Container = styled.div`
   margin: 0 auto;
   background: var(--background-primary-color);
   width: 100%;
-  height: calc(100vh - 9.3rem);
+  height: 100%;
+  min-height: 100vh;
   padding: 2rem 4rem;
 
   footer {
-    margin-top: 30px;
+    margin-top: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,8 +20,8 @@ export const Container = styled.div`
       background: var(--primary-color);
       color: #fff;
       border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
+      border-radius: 0.4rem;
+      padding: 1.2rem 2rem;
       font-weight: bold;
       text-transform: uppercase;
       transition: background 0.2s;
@@ -38,28 +39,50 @@ export const ProductTable = styled.table`
   thead th {
     color: #999;
     text-align: left;
-    padding: 12px;
+    padding: 1.2rem;
   }
 
   tbody td {
-    padding: 12px;
-    border-bottom: 1px solid #eee;
+    padding: 1.2rem;
+    border-bottom: 0.1rem solid #eee;
+
+    @media only screen and (max-width: 620px) {
+      padding: unset;
+
+      &:nth-child(2) {
+        padding: 1rem;
+      }
+    }
   }
 
   img {
-    height: 100px;
+    height: 12rem;
+    width: 12rem;
+
+    @media only screen and (max-width: 620px) {
+      height: 8rem;
+      width: 8rem;
+    }
   }
 
   strong {
     color: #333;
     display: block;
+
+    @media only screen and (max-width: 620px) {
+      font-size: 1rem;
+    }
   }
 
   span {
     display: block;
-    margin-top: 5px;
-    font-size: 18px;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+
+    @media only screen and (max-width: 620px) {
+      font-size: 1.4rem;
+    }
   }
 
   div {
@@ -67,11 +90,11 @@ export const ProductTable = styled.table`
     align-items: center;
 
     input {
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      border: 0.1rem solid #ddd;
+      border-radius: 0.4rem;
       color: #666;
-      padding: 6px;
-      width: 50px;
+      padding: 0.6rem;
+      width: 5rem;
     }
   }
 
